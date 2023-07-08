@@ -25,7 +25,7 @@ pipeline {
         sh '''
              sed "s/buildNumber/${BUILD_NUMBER}/g" K8/deployment.yaml > deployment-new.yaml
              kubectl apply -f deployment-new.yaml -n $K8S_NAMESPACE
-             kubectl apply -f service.yaml -n $K8S_NAMESPACE
+             kubectl apply -f K8/service.yaml -n $K8S_NAMESPACE
            '''
       }
     }
